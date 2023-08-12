@@ -66,7 +66,7 @@ function Update-OSDModule {
 }
 
 
-function delete-template_worspace {
+function Remove-template_worspace {
     [CmdletBinding()]
     param ()
 
@@ -126,7 +126,7 @@ if ($choice -eq "y" -or $choice -eq "yes") {
     Write-Host "Invalid choice. Please select 'y'/'yes', 'n'/'no', or 'c'/'cancel'."
 }
 
-delete-template_worspace
+Remove-template_worspace
 
 # Create new OSDCloud template
 New-OSDCloudTemplate
