@@ -5,6 +5,11 @@ Update the OSD module to the latest version.
 .DESCRIPTION
 This function updates the OSD module to the latest version. If the module is not installed, it will be installed. If an older version is installed, it will be updated, and the old version will be uninstalled.
 
+.NOTES
+Author: Matthew Miles
+Created: August 11, 2023
+Version: 1.0
+
 .EXAMPLE
 Update-OSDModule
 # Checks the OSD module, installs if not present, updates if outdated, and uninstalls old versions.

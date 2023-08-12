@@ -5,6 +5,11 @@ Update installed modules to the latest production or pre-release version.
 .DESCRIPTION
 This function updates all installed modules to the latest production or pre-release version (based on the AllowPrerelease switch).
 
+.NOTES
+Author: Matthew Miles
+Created: August 11, 2023
+Version: 1.0
+
 .PARAMETER AllowPrerelease
 If specified, updates to the latest pre-release versions; otherwise, updates to the latest production versions.
 
