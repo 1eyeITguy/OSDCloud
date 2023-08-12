@@ -26,7 +26,7 @@ param(
 # Set ProgressPreference to SilentlyContinue
 $ProgressPreference = 'SilentlyContinue'
 
-$ScriptName = 'scripts.miles-family.com'
+$ScriptName = 'scripts.miles-family.ps1'
 $ScriptVersion = '23.8.12.1'
 Write-Host -ForegroundColor Cyan "[i] $ScriptName version $ScriptVersion"
 
@@ -185,4 +185,4 @@ if ($isAdmin) {
     Write-Host -ForegroundColor Cyan "Start-OSDCloudScriptsGUI can be run in the new PowerShell window"
 }
 
-#Start-OSDCloudScriptsGUI -Path $ScriptFiles
+Start-OSDCloudScriptsGUI -Path $ScriptFiles
