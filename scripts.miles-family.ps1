@@ -21,7 +21,7 @@
 [CmdletBinding()]
 param(
     [System.String] $Owner = '1eyeITguy',
-    [System.String] $Repo = 'Cloud_Scripts'
+    [System.String] $Repo = 'Cloud_Scipts'
 )
 # Set ProgressPreference to SilentlyContinue
 $ProgressPreference = 'SilentlyContinue'
