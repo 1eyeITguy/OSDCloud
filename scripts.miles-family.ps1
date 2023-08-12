@@ -180,9 +180,9 @@ else {
 #endregion
 
 
-#if ($isAdmin) {
-#    Write-Host -ForegroundColor Cyan "To start a new PowerShell session, type 'start powershell' and press enter"
-#    Write-Host -ForegroundColor Cyan "Start-OSDCloudScriptsGUI can be run in the new PowerShell window"
-#}
+if ($isAdmin) {
+    Write-Host -ForegroundColor Cyan "To start a new PowerShell session, type 'start powershell' and press enter"
+    Write-Host -ForegroundColor Cyan "Start-OSDCloudScriptsGUI can be run in the new PowerShell window"
+}
 
-Start-OSDCloudScriptsGUI -Path $ScriptFiles
+#Start-OSDCloudScriptsGUI -Path $ScriptFiles
