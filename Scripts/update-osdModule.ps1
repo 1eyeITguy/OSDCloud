@@ -19,7 +19,6 @@ function Update-OSDModule {
     [CmdletBinding()]
     param ()
 
-    # Check admin privileges
     if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
         Throw "This function requires administrator privileges."
     }
@@ -28,7 +27,6 @@ function Update-OSDModule {
 
     Write-Host "Checking OSD module status..." -ForegroundColor Green
 
-    # Check if OSD module is installed
     $IsInstalled = Get-InstalledModule -Name $ModuleName -ErrorAction SilentlyContinue
     if (-not $IsInstalled) {
         Write-Host "OSD module is not installed. Installing the latest version..." -ForegroundColor Green
@@ -37,18 +35,14 @@ function Update-OSDModule {
         return
     }
 
-    # Get the installed version of OSD module
     $InstalledVersion = $IsInstalled.Version
 
-    # Get the latest version of OSD module
     $LatestVersion = (Find-Module -Name $ModuleName -AllVersions | Sort-Object Version -Descending)[0].Version
 
-    # Check if the installed version is outdated
     if ($InstalledVersion -lt $LatestVersion) {
         Write-Host "The installed version of OSD module ($InstalledVersion) is outdated. Updating to the latest version ($LatestVersion)..." -ForegroundColor Green
         Update-Module -Name $ModuleName -Scope CurrentUser -Force -AllowClobber -ErrorAction Stop
 
-        # Uninstall old versions
         $OldVersions = Get-InstalledModule -Name $ModuleName | Where-Object { $_.Version -ne $LatestVersion }
         foreach ($OldVersion in $OldVersions) {
             Write-Host "Uninstalling old version $($OldVersion.Version) of OSD module..." -ForegroundColor Gray
