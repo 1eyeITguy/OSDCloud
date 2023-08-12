@@ -27,30 +27,28 @@ $Global:oobeCloud = @{
 
 $AutopilotOOBEJson = @'
 {
-  "GroupTag": "",
-  "GroupTagOptions":  [
-                          "Development",
-                          "Enterprise"
-                      ],   
-  "AddToGroup": "",
-  "AddToGroupOptions": [
-                            "Autopilot_Devices-GeneralUsers"
-                       ],
-  "AssignedComputerName": "",                     
-  "AssignedUser": "",
-  "AssignedUserExample": "first.last@sight-sound.com",
-  "Assign": {
-              "IsPresent": true
-            },
-  "Hidden": [
-              "PostAction",
-              "Assign",
-              "Docs",
-              "AssignedUser"
-            ],    
-  "PostAction": "Quit",
-  "Run": "WindowsSettings",
-  "Title": "Sight & Sound Autopilot Registration"
+    "GroupTag": "",
+    "GroupTagOptions":  [
+                            "Development",
+                            "Enterprise"
+                        ],   
+    "AddToGroup": "",
+    "AddToGroupOptions": [
+                              "Autopilot_Devices-GeneralUsers"
+                         ],
+    "AssignedComputerName": "",                     
+    "AssignedComputerNameExample": "XXWIN-EID-XXXX",
+    "Assign": {
+                "IsPresent": true
+              },
+    "Hidden": [
+                "PostAction",
+                "Assign",
+                "Docs"
+              ],    
+    "PostAction": "Quit",
+    "Run": "WindowsSettings",
+    "Title": "Sight & Sound Autopilot Registration"
 }
 '@
 
@@ -139,7 +137,6 @@ function Step-oobeInstallModuleAutopilotOOBE {
         if (-not $Requirement)
         {       
             Write-Host -ForegroundColor Cyan 'Install-Module AutopilotOOBE'
-            #Install-Module -Name AutopilotOOBE -RequiredVersion 21.8.31.1 -Force
             Install-Module -Name AutopilotOOBE -Force
             Import-Module AutopilotOOBE -Force
             Start-AutopilotOOBE
