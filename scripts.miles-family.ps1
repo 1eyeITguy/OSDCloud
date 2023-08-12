@@ -1,4 +1,3 @@
-#Start-OSDPad -RepoOwner 1eyeITguy -RepoName OSDCloud -RepoFolder Scripts -BrandingTitle "Matt's scripts" 
 
 #Requires -RunAsAdministrator
 <#
