@@ -37,7 +37,7 @@ $AutopilotOOBEJson = @'
                               "Autopilot_Devices-GeneralUsers"
                          ],
     "AssignedComputerName": "",                     
-    "AssignedComputerNameExample": "XXWIN-EID-XXXX",
+    "AssignedComputerNameExample": "XXWIN-ENTRA-XXXX",
     "Assign": {
                 "IsPresent": true
               },
